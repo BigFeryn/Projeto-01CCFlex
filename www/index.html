@@ -9,31 +9,27 @@
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
     <script>
-        function olaNome() {
-            var nome = document.getElementById('inputNome').value
-            alert("Olá " + nome);
+        function dados() {
+            var nome = document.getElementById('inputNomeCompleto').value
+            var curso = document.getElementById('inputCurso').value
+            var idade = document.getElementById('inputIdade').value
+            document.getElementById('texto').innerHTML='Olá ' + nome + " " + curso + " " + idade
         }
-        function olaNomeSobrenome() {
-            var nome = document.getElementById('inputNome').value
-            var sobrenome = document.getElementById('inputSobrenome').value
-            alert("Olá " + nome + " " + sobrenome);
-        }
-        function olaNomeSobrenomeH1() {
-            var nome = document.getElementById('inputNome').value
-            var sobrenome = document.getElementById('inputSobrenome').value
-            document.getElementById('exibicao').innerHTML='Olá ' + nome + " " + sobrenome
+        function limpar() {
+            document.getElementById('texto').innerHTML= ""
         }
     </script>
 </head>
 <body>
 	<h1 id="exibicao">Olá Mundo</h1>   
-    <input type="text" placeholder="Insira seu nome" id="inputNome">
+    <input type="text" placeholder="Insira seu nome completo" id="inputNomeCompleto">
     <br>
-    <input type="text" placeholder="Insira seu sobrenome" id="inputSobrenome">
-    <input type="button" value="Olá" onclick="olaNomeSobrenomeH1()">
+    <input type="text" placeholder="Insira seu curso" id="inputCurso">
     <br>
-       <input type="button" value="Botão Nome" onclick="olaNome()">
-    <br>    
-    <input type="button" value="Botão Nome e Sobrenome" onclick="olaNomeSobrenome()">
+    <input type="text" placeholder="Insira sua idade" id="inputIdade">
+    <br>
+    <input type="button" value="Enviar Dados" onclick="dados()">
+    <input type="button" value="Limpar" onclick="limpar()">
+   <p id="texto"> </p>
 </body>
 </html>
